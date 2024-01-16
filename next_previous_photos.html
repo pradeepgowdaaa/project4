@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Animal Photos</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.next {
+  
+      background-color:black;  /* Set the background color to blue */
+      color: white;           /* Set the text color to white */
+      border: none;           /* Remove the default button border */
+      padding: 10px 20px;      /* Add padding to the button */
+      border-radius: 10px;    /* Set the border radius to 10 pixels */
+      cursor: pointer;        /* Change cursor on hover */
+    
+}
+.prev {
+  
+      background-color:black;  /* Set the background color to blue */
+      color: white;           /* Set the text color to white */
+      border: none;           /* Remove the default button border */
+      padding: 10px 20px;      /* Add padding to the button */
+      border-radius: 10px;    /* Set the border radius to 10 pixels */
+      cursor: pointer;        /* Change cursor on hover */
+    
+}
+.next :hover {
+      background-color: darkblue;  /* Change the background color on hover */
+    }
+.prev :hover {
+      background-color: darkblue;  /* Change the background color on hover */
+    }
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+  <div class="slide">
+    <img src="https://wallpaperbat.com/img/402082-best-3d-animal-wallpaper-tiger-wallpaper-tiger-picture-moving.jpg" alt="Animal 1">
+  </div>
+  <div class="slide">
+    <img src="https://wallpaperbat.com/img/6429-cute-cartoon-animal-wallpaper-top-free-cute-cartoon-animal.jpg" alt="Animal 2">
+  </div>
+  <div class="slide">
+    <img src="https://wallpaperbat.com/img/326021-animated-tiger-wallpaper.jpg" alt="Animal 3">
+  </div>
+  <div class="slide">
+    <img src="https://wallpaperbat.com/img/189942-best-3d-animal-wallpaper-hd-animated-animal-wallpaper.jpg" alt="Animal 4">
+  </div>
+  <div class="slide">
+    <img src="https://wallpaperbat.com/img/428699-moving-animal-wallpaper.jpg" alt="Animal 5">
+  </div>
+  <div class="slide">
+    <img src="https://wallpaperbat.com/img/298305-unique-animated-hd-animal-wallpaper.jpg" alt="Animal 6">
+  </div>
+  <!-- Add more slides as needed -->
+
+  <button class="prev" onclick="changeSlide(-1)"><</button>
+  <button class="next" onclick="changeSlide(1)">></button>
+</div>
+
+<script >
+    let currentSlide = 0;
+showSlide(currentSlide);
+
+function changeSlide(n) {
+  showSlide(currentSlide += n);
+}
+
+function showSlide(n) {
+  const slides = document.getElementsByClassName("slide");
+
+  if (n >= slides.length) {
+    currentSlide = 0;
+  } else if (n < 0) {
+    currentSlide = slides.length - 1;
+  } else {
+    currentSlide = n;
+  }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slides[currentSlide].style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
